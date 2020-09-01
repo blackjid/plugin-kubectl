@@ -24,8 +24,6 @@ $ fisher blackjid/plugin-kubectl
 
 ## Usage
 
-# kubectl abbreviations
-
 ### This command is used a LOT both below and in daily life
 
 | Abbreviation | Command                                              |
