@@ -29,6 +29,7 @@ function __kubectl.init
   __kubectl.create_abbr kcsc      kubectl config set-context
   __kubectl.create_abbr kcdc      kubectl config delete-context
   __kubectl.create_abbr kccc      kubectl config current-context
+  __kubectl.create_abbr kcsccn    kubectl config set-context --current --namespace
 
   # List all contexts
   __kubectl.create_abbr kcgc      kubectl config get-contexts
