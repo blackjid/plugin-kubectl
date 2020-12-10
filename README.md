@@ -50,6 +50,7 @@ $ fisher blackjid/plugin-kubectl
 | kcsc         | `kubectl config set-context`                         |
 | kcdc         | `kubectl config delete-context`                      |
 | kccc         | `kubectl config current-context`                     |
+| kcsccn       | `kubectl config set-context --current --namespace`   |
 
 ### List all contexts
 

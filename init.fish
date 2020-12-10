@@ -35,6 +35,7 @@ __kubectl_abbr kcuc      kubectl config use-context
 __kubectl_abbr kcsc      kubectl config set-context
 __kubectl_abbr kcdc      kubectl config delete-context
 __kubectl_abbr kccc      kubectl config current-context
+__kubectl_abbr kcsccn      kubectl config set-context --current --namespace
 
 # List all contexts
 __kubectl_abbr kcgc      kubectl config get-contexts
