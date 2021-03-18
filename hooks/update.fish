@@ -1,2 +1,2 @@
-source $path/uninstall.fish
-source $path/init.fish
+source $path/functions/__kubectl.reset.fish
+__kubectl.reset
