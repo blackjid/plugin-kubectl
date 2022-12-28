@@ -19,7 +19,7 @@ $ omf install https://github.com/blackjid/plugin-kubectl
 or with fisher
 
 ```fish
-$ fisher blackjid/plugin-kubectl
+$ fisher install blackjid/plugin-kubectl
 ```
 
 ## Usage
