@@ -1,11 +1,10 @@
-function _kubectl_install --on-event kubectl_install
+# Remove Legacy hooks to precent errors on upgrade.
+# This can be removed when we cleanup other universal abbr code.
+functions -e _kubectl_uninstall
+
+# fisher initialization, protected as omf also tries to run it.
+set -q fisher_path; or set -l fisher_path $__fish_config_dir
+if test -f $__fish_config_dir/functions/__kubectl.init.fish
+  source $__fish_config_dir/functions/__kubectl.init.fish
   __kubectl.init
-end
-
-function _kubectl_update --on-event kubectl_update
-  __kubectl.reset
-end
-
-function _kubectl_uninstall --on-event kubectl_uninstall
-  __kubectl.destroy
 end

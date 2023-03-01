@@ -2,14 +2,21 @@ function __kubectl.init
   function __kubectl.create_abbr -d "Create Kubectl plugin abbreviation"
     set -l name $argv[1]
     set -l body $argv[2..-1]
-    abbr -a $name $body
+    # global scope abbr is default in fish 3.6.0+
+    abbr -a -g $name $body
+
     set -a __kubectl_plugin_abbreviations $name
   end
 
-  set -q __kubectl_plugin_initialized; and exit 0
+  # Provide a smooth transition from universal to global abbreviations by
+  # deleting the old univeral ones.  Can be removed after fish 3.6 is in
+  # wide-spread use, i.e. 2024.  __kubectl.destroy should also be removed
+  # at the same time.
+  if set -q __kubectl_plugin_initialized
+    __kubectl.destroy
+  end
 
-  set -U __kubectl_plugin_abbreviations
-
+  
   # kubectl abbreviations
 
   # This command is used a LOT both below and in daily life
@@ -156,7 +163,4 @@ function __kubectl.init
 
   # Cleanup declared functions
   functions -e __kubectl.create_abbr
-
-  # Mark kubectl plugin as initialized
-  set -U __kubectl_plugin_initialized (date)
 end
