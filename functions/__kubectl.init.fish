@@ -161,6 +161,14 @@ function __kubectl.init
   __kubectl.create_abbr kdpvc     kubectl describe pvc
   __kubectl.create_abbr kdelpvc   kubectl delete pvc
 
+  # Daemonset management
+  __kubectl.create_abbr kgds      kubectl get ds
+  __kubectl.create_abbr kgdsa     kubectl get ds --all-namespaces
+  __kubectl.create_abbr kgdsw     kubectl get ds --watch
+  __kubectl.create_abbr keds      kubectl edit ds
+  __kubectl.create_abbr kdds      kubectl describe ds
+  __kubectl.create_abbr kdelds    kubectl delete ds
+
   # Cleanup declared functions
   functions -e __kubectl.create_abbr
 end
